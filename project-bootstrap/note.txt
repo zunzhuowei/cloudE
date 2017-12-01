@@ -1,0 +1,3 @@
+1.配置文件取得远程git中配置文件中心的local的文件。
+2.cloudE-pay-provider -- 支付服务         依赖redis,rabbit mq 环境。
+  cloudE-ucenter-provider -- 用户中心     依赖redis环境。
