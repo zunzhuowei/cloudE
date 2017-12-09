@@ -2,6 +2,8 @@ server:
   port: 8888
 
 spring:
+  profiles:
+    active: local
   application:
     name: cloudE-config-server
   cloud:
@@ -9,7 +11,7 @@ spring:
         server:
           git:
             uri: https://github.com/zunzhuowei/cloudE.git
-            searchPaths: cloudE-config-repo-home
+            searchPaths: cloudE-config-repo
             lable: master
 
 eureka:

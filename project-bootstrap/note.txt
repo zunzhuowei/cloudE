@@ -2,3 +2,16 @@
 2.cloudE-pay-provider -- 支付服务         依赖redis,rabbit mq 环境。
   cloudE-ucenter-provider -- 用户中心     依赖redis环境。
 
+3.cloudE-config-server ----> application.yml 设置用哪种配置。
+spring:
+  profiles:
+    active: local
+  application:
+    name: cloudE-config-server
+  cloud:
+      config:
+        server:
+          git:
+            uri: https://github.com/zunzhuowei/cloudE.git
+            searchPaths: cloudE-config-repo
+            lable: master
