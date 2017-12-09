@@ -2,6 +2,7 @@
 2.cloudE-pay-provider -- 支付服务         依赖redis,rabbit mq 环境。
   cloudE-ucenter-provider -- 用户中心     依赖redis环境。
 
+3.zipkin为分布式链路调用监控系统，聚合各业务系统调用延迟数据，达到链路调用监控跟踪。
 3.cloudE-config-server ----> application.yml 设置用哪种配置。
 spring:
   profiles:
