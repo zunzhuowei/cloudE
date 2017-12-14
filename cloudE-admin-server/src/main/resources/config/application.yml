@@ -1,6 +1,8 @@
 spring:
   application:
       name: cloudE-admin-server
+      admin:
+        enabled: true
   cloud:
       config:
           uri: http://localhost:8888
@@ -8,6 +10,9 @@ spring:
 eureka:
   instance:
     prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
 
 server:
   port: 8050
