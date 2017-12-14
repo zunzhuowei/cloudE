@@ -16,5 +16,6 @@ eureka:
   instance:
     prefer-ip-address: true
 
+#动态传入参数测试
 ucTask:
   dynamicParameter: 1
