@@ -8,10 +8,7 @@ import com.cloudE.ucenter.manager.UserManager;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -31,7 +28,8 @@ public class RechargeProvider {
 
 
     @HystrixCommand(fallbackMethod = "rechargeFallback")
-    @RequestMapping(value = "/recharge", method = RequestMethod.POST)
+    @PostMapping(value = {"/recharge"})
+    //@RequestMapping(value = "/recharge", method = RequestMethod.POST)
     public BaseResult<Boolean> recharge(@RequestParam(value = "userId") Long userId,
                                         @RequestParam(value = "amount") Double amount,
                                         @RequestParam(value = "type") String type) {

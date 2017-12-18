@@ -38,4 +38,18 @@ zuul:
     routes:
         ucenter:
             path: /ucenter/**
-            serviceId: cloudE-ucenter-provider
+            serviceId: cloudE-user-server
+        admin:
+            path: /admin/**
+            serviceId: cloudE-admin-server
+        zipkin:
+            path: /zipkin/**
+            serviceId: cloudE-zipkin-server
+        hystrixDashboard:
+            path: /hystrixDashboard/**
+            serviceId: cloudE-hystrix-dashboard-server
+        turbine:
+            path: /turbine/**
+            serviceId: cloudE-turbine-server
+
+# cloudE-ucenter-provider
