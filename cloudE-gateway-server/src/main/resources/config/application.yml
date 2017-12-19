@@ -51,5 +51,8 @@ zuul:
         turbine:
             path: /turbine/**
             serviceId: cloudE-turbine-server
+        eureka:
+            path: /eureka/**
+            serviceId: cloudE-eureka-server
 
 # cloudE-ucenter-provider
