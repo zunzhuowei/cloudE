@@ -16,3 +16,20 @@ spring:
             uri: https://github.com/zunzhuowei/cloudE.git
             searchPaths: cloudE-config-repo
             lable: master
+
+----------->> 2017年12月21日10:35:26 <<---------------
+2.创建bootstrap.yml在resource下,并设置spring.application.name,spring.cloud.config.uri,server.port信息,具体如下
+
+spring:
+  application:
+    name: mmb-config-client
+  cloud:
+    config:
+      uri:  http://localhost:8001
+
+---
+server:
+  port: 8002
+注意这里是bootstrap.yml而不是appliction.yml,因为bootstrap.yml会在应用启动之前读取,而spring.cloud.config.uri会影响应用启动
+
+----------->> 2017年12月21日10:35:26 <<---------------
