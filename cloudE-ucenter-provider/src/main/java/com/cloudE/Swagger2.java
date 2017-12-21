@@ -18,7 +18,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class Swagger2 {
 
-    @Bean
+    /*@Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
@@ -32,6 +32,27 @@ public class Swagger2 {
         return new ApiInfoBuilder()
                 .title("用户中心")
                 .contact("vangao1989@126.com")
+                .version("1.0")
+                .build();
+    }
+*/
+    // http://192.168.1.204:8082/swagger-ui.html#/recharge-provider
+
+    @Bean
+    public Docket createRestApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.cloudE.ucenter.provider"))
+                .paths(PathSelectors.any())
+                .build();
+    }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title("用户中心")
+                .description("简单优雅的restful风格，https://www.baidu.com")
+                .termsOfServiceUrl("https://www.baidu.com")
                 .version("1.0")
                 .build();
     }
