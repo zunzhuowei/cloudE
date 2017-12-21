@@ -13,7 +13,7 @@
 
     <!-- 在MBG工作的时候，需要额外加载的依赖包 location属性指明加载jar/zip包的全路径 -->
     <classPathEntry
-            location="/Users/vangao/dev/repo/mysql/mysql-connector-java/5.1.35/mysql-connector-java-5.1.35.jar"/>
+            location="E:\maven\repository\mysql\mysql-connector-java\5.1.39\mysql-connector-java-5.1.39.jar"/>
 
 
     <!--
@@ -42,9 +42,9 @@
         <!-- <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" /> -->
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://host:3306/db"
-                        userId="userId"
-                        password="password">
+                        connectionURL="jdbc:mysql://192.168.1.210:3306/kx_beard"
+                        userId="dev"
+                        password="dev">
         </jdbcConnection>
 
         <!-- java类型处理器
@@ -143,7 +143,7 @@
                注意，table里面很多参数都是对javaModelGenerator，context等元素的默认属性的一个复写；
             -->
 
-        <table tableName="user" domainObjectName="User">
+        <table tableName="memberfides0" domainObjectName="Memberfides">
             <generatedKey column="id" sqlStatement="MySql"
                           identity="true" type="post"/>
         </table>

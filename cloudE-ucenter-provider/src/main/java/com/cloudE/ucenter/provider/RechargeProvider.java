@@ -2,6 +2,7 @@ package com.cloudE.ucenter.provider;
 
 import com.alibaba.fastjson.JSON;
 import com.cloudE.dto.BaseResult;
+import com.cloudE.entity.Memberfides;
 import com.cloudE.entity.User;
 import com.cloudE.pay.client.ApplePayClient;
 import com.cloudE.ucenter.manager.UserManager;
@@ -42,6 +43,8 @@ public class RechargeProvider {
                                         @RequestParam(value = "amount") Double amount,
                                         @RequestParam(value = "type") String type) {
         User user = userManager.getUserByUserId(userId);
+        Memberfides memberfides = userManager.getMeberByMid(801);
+        System.out.println("memberfides = " + memberfides);
         LOGGER.info("user {} recharge {},type:{}", user.getUsername(), amount, type);
         BaseResult<Boolean> baseResult = applePayClient.recharge(userId, amount);
         LOGGER.info("user {} recharge  res:{}", user.getUsername(), JSON.toJSONString(baseResult));
