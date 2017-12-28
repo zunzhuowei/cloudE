@@ -3,18 +3,34 @@ spring:
       name: cloudE-admin-server
       admin:
         enabled: true
-  cloud:
-      config:
-          uri: http://localhost:8888
+#  cloud:
+#      config:
+#          uri: http://192.168.1.123:8888
+
+#  boot:
+#      admin:
+#        username: "${security.user.name}"
+#        password: "${security.user.password}"
+#      client:
+#        metadata:
+#          user.name: "${security.user.name}"
+#          user.password:  "${security.user.password}"
 
 eureka:
   instance:
     prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://192.168.1.123:8761/eureka/
 
 server:
   port: 8050
 
 
+
+# 引用监控限制内容Map <Key String>
+info:
+  artifact : spring-boot-admin
+  name: ${spring.application.name}
+  description: 应用监控中心
+  version : V1.0
